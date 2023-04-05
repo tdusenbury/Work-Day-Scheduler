@@ -21,6 +21,36 @@ $(function () {
   //
   // TODO: Add code to display the current date in the header of the page.
 });
-
+//Code to display current date in header of the page.
 var today = dayjs();
 $('#currentDay').text(today.format('dddd, MMMM D, YYYY'));
+
+
+//Code to convert time to 24-hour/military time
+var currentTime = dayjs().format("H");
+console.log(currentTime);
+
+
+var timePresent = currentTime;
+console.log(timePresent);
+
+
+
+/*$(function )
+  if (currentTime === timeDiv) {
+    $(this).addClass("present");
+
+// first box is 8 am which is 0 + 8 so if time is 1400, then 8<14 and should be "past"
+then if box is 14 and current time is 800m then 14 > 8, and should be "future"
+
+  }else if(currentTime < timeDiv) {
+    $(this).removeClass("present")
+    $(this).addClass("future")
+
+  }else if(currentTime > timeDiv) {
+    $(this).removeClass("future")
+    $(this).addClass("past")
+  } */
+
+  
+
