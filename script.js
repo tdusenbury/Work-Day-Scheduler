@@ -24,7 +24,7 @@ console.log("TEST")
 
 
 
-$("saveBtn").click (function (event) {
+$("saveBtn").click(function (event) {
     event.preventDefault();
     var value = $(this).siblings("time-block").val();
     var plannerEntry = $(this).parent().attr("id").string("")[1];
