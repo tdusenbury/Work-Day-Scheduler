@@ -1,4 +1,3 @@
-
 //Code to display current date in header of the page.
 var today = dayjs();
 $('#currentDay').text(today.format('dddd, MMMM D, YYYY'));
@@ -29,7 +28,7 @@ console.log(document.body.children[1].children[1]);
 var divId = document.body.children[1].children[1]
 console.log("TEST")
 
-
+//This is the event listener in jQuery that starts the function to save the text in the scheduler. I utilized DOM traversing to pinpoint the locations of the buttons as well as div classes and id's. 
 $('.saveBtn').on('click', function(event) {
   event.preventDefault();
   var text = $(this).siblings('.description').val();
@@ -41,6 +40,7 @@ $('.saveBtn').on('click', function(event) {
   console.log(text)
   });
 
+  //This section contains the call back of items held in local storage, where they are kept organized by the hour line and corresponding text description box, so that information is not lost when a screen refresh is executed.  
   $("#hour-8 .description").val(localStorage.getItem("hour-8"));
   console.log($("#hour-8 .time-block"))
   $("#hour-9 .description").val(localStorage.getItem("hour-9"));
@@ -53,19 +53,3 @@ $('.saveBtn').on('click', function(event) {
   $("#hour-16 .description").val(localStorage.getItem("-hour-16"));
   $("#hour-17 .description").val(localStorage.getItem("hour-17"));
   $("#hour-18 .description").val(localStorage.getItem("hour-18"));
-
-
-
-  // TODO: Add a listener for click events on the save button. This code should
-  // use the id in the containing time-block as a key to save the user input in
-  // local storage. HINT: What does `this` reference in the click listener
-  // function? How can DOM traversal be used to get the "hour-x" id of the
-  // time-block containing the button that was clicked? How might the id be
-  // useful when saving the description in local storage?
-
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
-  //
-
-

@@ -4,17 +4,15 @@
 
 | Technology Used         | Resource URL           | 
 | ------------- |:-------------:| 
-| JavaScript | [https://day.js.org/](https://day.js.org/); 
-[https://www.w3schools.com/js/js_loop_for.asp](https://www.w3schools.com/js/js_loop_for.asp); [https://www.w3schools.com/js/js_if_else.asp] (https://developer.mozilla.org/en-US/docs/Web/API/Console/log); [https://developer.mozilla.org/en-US/docs/Web/API/Console/log](https://api.jquery.com/click/#post-97); [https://api.jquery.com/click/#post-97] (https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage); [https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage] (https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
-
+| JavaScript | [https://day.js.org/](https://day.js.org/);  [https://www.w3schools.com/js/js_loop_for.asp](https://www.w3schools.com/js/js_loop_for.asp); [https://www.w3schools.com/js/js_if_else.asp](https://www.w3schools.com/js/js_if_else.asp); [https://developer.mozilla.org/en-US/docs/Web/API/Console/log](https://developer.mozilla.org/en-US/docs/Web/API/Console/log); [https://api.jquery.com/click/#post-97](https://api.jquery.com/click/#post-97); [https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage); 
 ## Description 
 
-This application is a Password Generator. The Password Generator gives the user a series of questions including how long they would like their password and whether or not to include such characters as lower case alphabet, upper case alphabet, numbers, or symbols. Additionally, if the user chooses a password length that is too short or too long, a message appears with the available options. Also, a message alerts the user if they did not choose any character options and the process begins again.
+This is a Work-Day Schedule application to keep track of events on a single day. The events are held in local storage so they remain as long as they are saved even after a refresh of the screen. Additionally, the hours of the day are color coded to past, present, and future so the user can easily determine what appointment/task is scheduled for the current hour, which are late, and those to come.
 
 
 
 
-![Screenshot of My Site](images/PG%20Site.PNG)
+![Screenshot of My Site](images/Screen%20Pic%20Scheduler.PNG)
 
 
 
@@ -24,7 +22,7 @@ This application is a Password Generator. The Password Generator gives the user 
 
 ## Code Example
 
-Utilized div id for "past", "present", and "future" to apply styles to the time-block divs. I set up a 24-hour clock in javascript that is then used by a for loop to determine what color each line should be. The div id reflects the 24-hour clock, but I maintained the am/pm version in the visible text on the planner.
+Utilized div id for "past", "present", and "future" to apply styles to the time-block divs. I set up a 24-hour clock in javascript that is then used by a for loop to determine what color each line should be. The div id reflects the 24-hour clock, but I maintained the am/pm version in the visible text on the planner. Additionally I added a "Before Work" and "After Work" line as a placeholder for taking an application like this to the next logical place, a digital planner.
 
 ```
 Set up 24-hour clock:
@@ -43,25 +41,16 @@ for(var i=8; i <= 18; i++) {
   }
 }
 ```
-
-
 ## Usage 
 
-This Password Generator can be used by anyone who wants to control most of the length and types of characters in a random password.
-
+This scheduler might be useful for someone who wanted to deal with just a single day, but it really is the basis for creating a multi-day digital planner/organizer. This layout would be especially helpful to those people who prefer or need visual colors to help with their organization.
 
 ## Learning Points 
 
-This project involved utilizing JavaScript. I tried to approach it section by section initially, but became stuck. I was able to get advice from my tutor as well as classmates and went back to writing each section followed by a console.log to test that the code was working without error. I learned about arrays and objects, random number/character generation, the types of message boxes prompts, alerts, and confirms can produce.
+The most significant learning point for me with this project was getting the local storage to work. I learned about rechecking if it is a class or an id and how to format those items. Also, if you change how you refer to something, remembering to change it in all the places. 
 
-I struggled with this project every time I tried to move to the next part before it was ready. It took lots of testing before I was able to get my "If not truthy" alert correct if someone did not choose any options. I was trying to evaluate it as an equality not as a true/false statement.
-Fortunately, a great classmate helped explain my error and helped me simplify the statement.
-Here are pictures of the code that finally worked and the message it now produces if no character options are chosen:
+I knew what I needed to do to change the colors, but I struggled with writing the for loop. Here I learned that talking to my classmates was very helpful. I was able to walk through my pseudocode with a classmate who was more familiar with the coding. By going over my pseudocode with me, she knew that I understood what needed to happen (half the battle at least!!) and helped me develop code walking through those steps.
 
-![Screenshot of My Site](images/Code%20if%20No%20Choices.PNG)
-
-
-![Screenshot of My Site](images/No%20Choices%20Made%20Message.PNG)
 
 ## Author Info
 
@@ -79,7 +68,7 @@ TAMARA "T" DUSENBURY
 
 ## Credits
 
-Shout out to Laurie Fish for helping keep the ideas rolling and weird for more hours than we care to admit; to my tutor Katie; and to Liubov Sobolevskaya for making me think so very hard!!!
+Shout out to Laurie for helping it funny; and to Liubov for cheering along when I finally fix the thing!!!
 
 
 ## License
