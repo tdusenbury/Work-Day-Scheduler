@@ -4,7 +4,8 @@
 
 | Technology Used         | Resource URL           | 
 | ------------- |:-------------:| 
-| JavaScript | [https://www.w3schools.com/jsref/met_win_prompt.asp](https://www.w3schools.com/jsref/met_win_prompt.asp);  [https://www.w3schools.com/jsref/met_win_alert.asp](https://www.w3schools.com/jsref/met_win_alert.asp); [https://www.w3schools.com/jsref/met_win_confirm.asp](https://www.w3schools.com/jsref/met_win_confirm.asp); [https://www.w3schools.com/jsref/prop_win_length.aspWeb/CSS](https://www.w3schools.com/jsref/prop_win_length.asp); [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor); [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random); [https://www.w3schools.com/js/js_objects.asp](https://www.w3schools.com/js/js_objects.asp); [https://www.w3schools.com/js/js_strings.asp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor)
+| JavaScript | [https://day.js.org/](https://day.js.org/); 
+[https://www.w3schools.com/js/js_loop_for.asp](https://www.w3schools.com/js/js_loop_for.asp); [https://www.w3schools.com/js/js_if_else.asp] (https://developer.mozilla.org/en-US/docs/Web/API/Console/log); [https://developer.mozilla.org/en-US/docs/Web/API/Console/log](https://api.jquery.com/click/#post-97); [https://api.jquery.com/click/#post-97] (https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage); [https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage] (https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
 
 ## Description 
 
@@ -18,30 +19,28 @@ This application is a Password Generator. The Password Generator gives the user 
 
 
 
-[Visit the Deployed Site](https://tdusenbury.github.io/Password-Generator-Project/)
+[Visit the Deployed Site](https://tdusenbury.github.io/Work-Day-Scheduler/)
 
 
 ## Code Example
 
-Instead of using the array method to state all of my elements, I chose to use the object method by defining "keys" and then pulling each of the chosen elements into a new string called customerChoices.
+Utilized div id for "past", "present", and "future" to apply styles to the time-block divs. I set up a 24-hour clock in javascript that is then used by a for loop to determine what color each line should be. The div id reflects the 24-hour clock, but I maintained the am/pm version in the visible text on the planner.
 
 ```
-Created an object:
-const keys = {
-  upperCase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-  lowerCase: "abcdefghijklmnopqrstuvwxyz",
-  numbers: "0123456789",
-  symbols: "!@#$%^&*~+={}[]:,./"
-}
+Set up 24-hour clock:
+var currentTime = dayjs().format("H");
+console.log(currentTime);
 
-The new string:
-var customerChoices =""
-
-Directed choices to go into the new string:
-if (confirmLowerCase === true) {
-    console.log("Before ", customerChoices);
-    customerChoices = customerChoices + keys.lowerCase;
-    console.log("After ", customerChoices);
+Then for loop:
+for(var i=8; i <= 18; i++) {
+  if(i < currentTime) {
+    $(`#hour-${i}`).addClass('past');
+  } else if(i == currentTime) {
+    $(`#hour-${i}`).addClass('present');
+    console.log("I am here");
+  } else if(i > currentTime) {
+    $(`#hour-${i}`).addClass('future');
+  }
 }
 ```
 
