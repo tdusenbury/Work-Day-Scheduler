@@ -3,9 +3,10 @@
 var today = dayjs();
 $('#currentDay').text(today.format('dddd, MMMM D, YYYY'));
 
-//Code to convert time to 24-hour/military time
+//Code to convert time to 24-hour/military time for color parameters for loop
 var currentTime = dayjs().format("H");
 console.log(currentTime);
+
 
 //test
 var timePresent = currentTime;
@@ -14,12 +15,12 @@ console.log(timePresent);
 //apply color based on time parameters
 for(var i=8; i <= 18; i++) {
   if(i < currentTime) {
-    $(`#hour-${i}`).addClass("past");
+    $(`#hour-${i}`).addClass('past');
   } else if(i == currentTime) {
-    $(`#hour-${i}`).addClass("present");
+    $(`#hour-${i}`).addClass('present');
     console.log("I am here");
   } else if(i > currentTime) {
-    $(`#hour-${i}`).addClass("future");
+    $(`#hour-${i}`).addClass('future');
   }
 }
 
@@ -28,25 +29,30 @@ console.log(document.body.children[1].children[1]);
 var divId = document.body.children[1].children[1]
 console.log("TEST")
 
-$("saveBtn").click(function (event) {
+
+$('.saveBtn').on('click', function(event) {
   event.preventDefault();
-  var value = $(this).siblings("time-block").val();
-  var plannerEntry = $(this).parent().attr("id").split("-")[1];
-  localStorage.setItem(value, plannerEntry);
-    console.log("i am also here")
+  var text = $(this).siblings('.description').val();
+  var time = $(this).parent().attr("id");
+  console.log(typeof time)
+  localStorage.setItem(time, text);
+
+  console.log(time);
+  console.log(text)
   });
 
-  $("#hour-8 .time-block").val(localStorage.getItem("08"));
-  $("#hour-9 .time-block").val(localStorage.getItem("09"));
-  $("#hour-10 .time-block").val(localStorage.getItem("10"));
-  $("#hour-11 .time-block").val(localStorage.getItem("11"));
-  $("#hour-12 .time-block").val(localStorage.getItem("12"));
-  $("#hour-13 .time-block").val(localStorage.getItem("13"));
-  $("#hour-14 .time-block").val(localStorage.getItem("14"));
-  $("#hour-15 .time-block").val(localStorage.getItem("15"));
-  $("#hour-16 .time-block").val(localStorage.getItem("16"));
-  $("#hour-17 .time-block").val(localStorage.getItem("17"));
-  $("#hour-18 .time-block").val(localStorage.getItem("18"));
+  $("#hour-8 .description").val(localStorage.getItem("hour-8"));
+  console.log($("#hour-8 .time-block"))
+  $("#hour-9 .description").val(localStorage.getItem("hour-9"));
+  $("#hour-10 .description").val(localStorage.getItem("hour-10"));
+  $("#hour-11 .description").val(localStorage.getItem("hour-11"));
+  $("#hour-12 .description").val(localStorage.getItem("hour-12"));
+  $("#hour-13 .description").val(localStorage.getItem("hour-13"));
+  $("#hour-14 .description").val(localStorage.getItem("hour-14"));
+  $("#hour-15 .description").val(localStorage.getItem("hour-15"));
+  $("#hour-16 .description").val(localStorage.getItem("-hour-16"));
+  $("#hour-17 .description").val(localStorage.getItem("hour-17"));
+  $("#hour-18 .description").val(localStorage.getItem("hour-18"));
 
 
 
